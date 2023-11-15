@@ -2,30 +2,29 @@
 
 function solveEquation(a, b, c) {
 
-	let d = b ** -4 * a * c
+	let d = b ** 2 - 4 * a * c
+	let x1, x2 = [];
+	let x = x;
+	let arr = [];
+	let x0 == (-b / (2 * a));
+	let x1 = (-b + Math.sqrt(d)) / (2 * a);
+	let x2 = (-b - Math.sqrt(d)) / (2 * a);
+
+	return arr;
 
 
-	if (d < 0) {
-		let x1, x2 == [];
+	if (d == 0) {
 
-	} else if (d == 0) {
-
-		let x1 == (-b / (2 * a));
+		arr.push[x0];
 
 	} else if (d > 0) {
 
-		let x1 == (-b + Math.sqrt(d)) / (2 * a);
-		let x2 == (-b - Math.sqrt(d)) / (2 * a);
+		arr.push[x2];
+		arr.push[x1];
 
 	}
-
-
-	let arr = [a(x - x1)(x - x2)];
-
-	return arr;
 }
 
-
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  
+
 }
