@@ -6,16 +6,16 @@ function solveEquation(a, b, c) {
 	let x1, x2 = [];
 	let u = x;
 	let arr = [];
-	let x0 = (-b / (2 * a));
-	let x1 = (-b + Math.sqrt(d)) / (2 * a);
-	let x2 = (-b - Math.sqrt(d)) / (2 * a);
-
 	
     if (d == 0) {
-		arr.push[x0];
+
+		let x0 = (-b / (2 * a));
+		arr.push(x0);
 
 	} else if (d > 0) {
 
+		let x1 = (-b + Math.sqrt(d)) / (2 * a);
+		let x2 = (-b - Math.sqrt(d)) / (2 * a);
 		arr.push(x1, x2);
 
 	}
