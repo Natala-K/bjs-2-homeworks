@@ -3,11 +3,9 @@
 function solveEquation(a, b, c) {
 
 	let d = b ** 2 - 4 * a * c
-	let x1, x2 = [];
-	let u = x;
 	let arr = [];
-	
-    if (d == 0) {
+
+	if (d == 0) {
 
 		let x0 = (-b / (2 * a));
 		arr.push(x0);
@@ -23,7 +21,15 @@ function solveEquation(a, b, c) {
 	return arr;
 }
 
-
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
+	let a = 100;
+	let percent = a / 100;
+	let p = 0.12;
+	let n = 0;
+	let creditBody = amount - contribution;
+	let countMonths = creditBody * (p + (p / (((1 + p) ** n) - 1)));
+	let result = n * countMonths;
+
+	return result;
 }
