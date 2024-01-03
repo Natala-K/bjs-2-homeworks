@@ -1,27 +1,20 @@
-function getArrayParams(...arr) {
+function getArrayParams(5, 80, 46789) {
 
-  let min = [1, 2, 3, 4, 5, 6, 7];
-  let max = [-35, 1, 12, 18, -9];
-  let sum = 0;
+return Math.max.apply(5, 80, 46789);
+return Math.min.apply(5, 80, 46789);
+ 
 
-  for (let i = 0; i < arr.length; i++) {
-    sum = +arr[i];
+}
 
-    if item > max {
-      item == max;
-    }
-   
-    if item < min {
-      item == min;
-    }
+  let sum = getArrayParams.reduce((prev, item, index) => {
+    return prev + item;
+  }, 0);
 
-   let avr = item + sum 
-    
-   return min
-   return max
-   return avr
+  let avg = sum / 3;
+  return Number(avg.toFixed(2))
 
-  }
+
+
 
 function summElementsWorker(...arr) {
 
