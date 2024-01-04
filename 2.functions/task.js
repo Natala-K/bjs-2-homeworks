@@ -1,17 +1,22 @@
-function getArrayParams(5, 80, 46789) {
-
-return Math.max.apply(5, 80, 46789);
-return Math.min.apply(5, 80, 46789);
+function getArrayParams(...arr) {
  
+ let min = Infinity;
+ let max = -Infinity;
+ sum = 0;
+
+ for(let i = 0; i < arr.length; i++) {
+  if (arr[i] > max) {
+    let max = arr[i]
+  } else if (arr[i] < min) {
+    let min = arr[i]
+  }
+  let avg = arr[i] + sum
+
+ }
 
 }
 
-  let sum = getArrayParams.reduce((prev, item, index) => {
-    return prev + item;
-  }, 0);
 
-  let avg = sum / 3;
-  return Number(avg.toFixed(2))
 
 
 
