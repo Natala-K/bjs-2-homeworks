@@ -1,21 +1,27 @@
+let min = Infinity;
+let max = -Infinity;
+let sum = 0;
+
+
 function getArrayParams(...arr) {
- 
- let min = Infinity;
- let max = -Infinity;
- let sum = 0;
 
  for(let i = 0; i < arr.length; i++) {
   if (arr[i] > max) {
-    let max = arr[i]
-  } else if (arr[i] < min) {
-    let min = arr[i]
-  }
-  let avg = arr[i] + sum
-
- }
-
+    max = arr[i]
+  } 
 }
 
+  for(let i = 0; i < arr.length; i++) {
+  if (arr[i] < min) {
+    min = arr[i]
+  }
+ }
+}
+
+let avg = arr[i] + sum;
+return { min: min, max: max, avg: avg };
+
+getArrayParams(9, 99, 1)
 
 
 
