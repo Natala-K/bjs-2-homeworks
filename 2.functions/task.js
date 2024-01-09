@@ -1,9 +1,11 @@
-let min = Infinity;
-let max = -Infinity;
-let sum = 0;
+
 
 
 function getArrayParams(...arr) {
+
+  let min = Infinity;
+  let max = -Infinity;
+  let sum = 0;
 
  for(let i = 0; i < arr.length; i++) {
   if (arr[i] > max) {
@@ -16,12 +18,14 @@ function getArrayParams(...arr) {
     min = arr[i]
   }
  }
+ 
+let average = sum(arr) / 3;
+
+return { min: min, max: max, average: avg };
 }
 
-let avg = arr[i] + sum;
-return { min: min, max: max, avg: avg };
 
-getArrayParams(9, 99, 1)
+
 
 
 
