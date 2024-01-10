@@ -11,13 +11,13 @@ function getArrayParams(...arr) {
   if (arr[i] > max) {
     max = arr[i]
   } 
-}
-
-  for(let i = 0; i < arr.length; i++) {
   if (arr[i] < min) {
     min = arr[i]
   }
- }
+}
+
+
+ 
  
 let average = sum(arr) / 3;
 
