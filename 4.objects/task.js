@@ -10,25 +10,23 @@ const newStudent = new Student('Pert', 'male', '19')
 
 Student.prototype.setSubject = function(subjectName) {
 	this.subject = subjectName;
-	this.marks = [];
+	
 
 }
 
 Student.prototype.addMarks = function(...marks) {
 	if (this.hasOwnProperty('marks')) {
-		this.marks.push(...marks);
-	} else {
-    return 0;
-  }
+	this.marks.push(...marks);
+	} 
 }
 
 Student.prototype.getAverage = function() {
-	if (this.hasOwnProperty('marks') === false || this.marks == []) {
+	if (this.hasOwnProperty('marks') === false || this.marks.length == 0) {
 		return 0;
 	} 
-		let length = this.marks.length;
-		let sum = this.marks.reduce((acc, mark) => acc + mark, 0);
-		return sum / length;
+	let length = this.marks.length;
+	let sum = this.marks.reduce((acc, mark) => acc + mark, 0);
+	return sum / length;
 	
 }
 
