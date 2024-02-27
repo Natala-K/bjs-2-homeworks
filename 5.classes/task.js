@@ -4,15 +4,19 @@ class PrintEditionItem {
 
 	constructor(name, releaseDate, pagesCount) {
 		this.name = name;
-		this.releaseDate = date;
+		this.releaseDate = releaseDate;
 		this.pagesCount = pagesCount;
 		this._state = 100;
 		this.type = null;
+		
 	}
-}
 
 fix() {
 	this._state = this._state * 1.5;
+if (this._state > 100) {
+	
+	this._state = 100;
+}
 
 }
 
@@ -32,7 +36,7 @@ set state(value) {
 get state() {
 	return this._state;
 }
-
+}
 
 class Magazine extends PrintEditionItem {
 	constructor(name, releaseDate, pagesCount) {
@@ -42,7 +46,7 @@ class Magazine extends PrintEditionItem {
 }
 
 class Book extends PrintEditionItem {
-	constructor(name, releaseDate, pagesCount) {
+	constructor(author, name, releaseDate, pagesCount) {
 		super(name, releaseDate, pagesCount)
 		this.author = author;
 		this.type = "book";
@@ -50,22 +54,61 @@ class Book extends PrintEditionItem {
 }
 
 class NovelBook extends Book {
-	constructor(name, releaseDate, pagesCount) {
+	constructor(name, releaseDate, pagesCount, author) {
 		super(name, releaseDate, pagesCount)
-		this.type = "novelbook";
+		this.type = "novel";
 	}
 }
 
 class FantasticBook extends Book {
-	constructor(name, releaseDate, pagesCount) {
+	constructor(name, releaseDate, pagesCount, author) {
 		super(name, releaseDate, pagesCount)
 		this.type = "fantastic";
 	}
 }
 
 class DetectiveBook extends Book {
-	constructor(name, releaseDate, pagesCount) {
+	constructor(name, releaseDate, pagesCount, author) {
 		super(name, releaseDate, pagesCount)
 		this.type = "detective";
 	}
+}
+
+class Library {
+	constructor (name) {
+		this.name = name;
+		this.books = [];
+
+	}
+
+	addBook(book) {
+ if (book.state > 30) {
+	this.books.push(book)
+ }
+	}
+
+	findBookBy(type, value) {
+		const res = this.books.find((item) => {
+			return item[type] === value;
+		});
+
+		if (res === undefined) {
+			return null;
+		}
+		return res;
+	}
+
+		giveBookByName(bookName) {
+    const bookIndex = this.books.findIndex((item) => {
+		return item.name === bookName;
+	});
+
+	if (bookIndex < 0) {
+		return null;
+	}
+
+	const book = this.books[bookIndex];
+	this.books.splice(bookIndex, 1);
+	return book;
+		}
 }
