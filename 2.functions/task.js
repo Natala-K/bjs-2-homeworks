@@ -112,8 +112,6 @@ if (arr.length == 0) {
  }
 
 
-
-
  function makeWork(arrOfArr, func) {
 
   let maxWorkerResult = -Infinity;
@@ -121,13 +119,14 @@ if (arr.length == 0) {
   const arr2 = [];
 
   for (let i = 0; i < arrOfArr.length; i++) {
-  arr2.push(func(arrOfArr[i]));
+  arr2.push(func(...arrOfArr[i]));
+
+  if (arr2[i] > maxWorkerResult) {
+    maxWorkerResult = arr2[i];
+   }
 }
  
-const arr3 = [...arr2];
-
-maxWorkerResult = Math.max(arr3)
 
 return (maxWorkerResult);
 
-}
+ }

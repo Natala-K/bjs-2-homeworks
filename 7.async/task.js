@@ -1,3 +1,4 @@
+
 class AlarmClock {
     constructor() {
         this.alarmCollection = [];
@@ -14,7 +15,6 @@ if (time === undefined || callback === undefined) {
     const res = this.alarmCollection.find(item => item.time === time);
 if (res) {
     console.warn("Уже присутствует звонок на это же время");
-
 }
 
 this.alarmCollection.push({
@@ -27,10 +27,12 @@ this.alarmCollection.push({
 removeClock(time) {
 this.alarmCollection = this.alarmCollection.filter(item => {
     return item.time !== time;
-})
+});
 }
 
+
 getCurrentFormattedTime() {
+
     const today = new Date();
     let hours = today.getHours();
     let minutes = today.getMinutes();
@@ -47,6 +49,7 @@ getCurrentFormattedTime() {
     return res;
 }
 
+
 start() {
     if (this.intervalId != undefined) {
         return;
@@ -62,9 +65,24 @@ start() {
     }
 }
 
+
 stop() {
     clearInterval(this.intervalId);
     this.intervalId = null;
 }
+
+resetAllCalls() {
+    this.alarmCollection.forEach(item => {
+        item.canCall = true;
+    });
+}
+
+
+clearAlarms() {
+this.stop();
+this.alarmCollection = [];
+
+}
+
 
 }
