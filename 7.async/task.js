@@ -38,18 +38,16 @@ getCurrentFormattedTime() {
     let minutes = today.getMinutes();
 
     if (hours < 10) {
-    hours = "0" + hours;
+    hours = '0' + hours;
     }
 
     if (minutes < 10) {
-        minutes = "0" + minutes;
+        minutes = '0' + minutes;
     }
 
     let res = `${hours}:${minutes}`;
     return res;
 }
-
-
 
 start() {
     if (this.intervalId != undefined) {
